@@ -21,6 +21,9 @@
                 <input x-model="userInput" placeholder="Enter todo item" type="text">
                 <button x-on:click="todos.push({name: userInput, completed: false})">Add</button>
             </form>
+            <template x-for="todo in todos">
+                <span x-text="todo.name"></span>
+            </template>
         </div>
     </div>
 </body>
