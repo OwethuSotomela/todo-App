@@ -19,11 +19,13 @@
         <div x-data="{ todos: [], userInput: ''}">
             <form x-on:submit.prevent>
                 <input x-model="userInput" placeholder="Enter todo item" type="text">
-                <button x-on:click="todos.push({name: userInput, completed: false})">Add</button>
+                <button @click="todos.push({name: userInput, completed: false})">Add</button>
             </form>
             <template x-for="todo in todos">
                 <div>
+                    <input type="checkbox">
                     <span x-text="todo.name"></span>
+                    <button @click="todos = todos.filter((currentToDo)=> currentToDo != todo)">x</button>
                 </div>
             </template>
         </div>
