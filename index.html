@@ -19,15 +19,17 @@
         <div x-data="{ todos: [], userInput: ''}">
             <form x-on:submit.prevent>
                 <input x-model="userInput" placeholder="Enter todo item" type="text">
-                <button @click="if(userInput.length > 0) todos.push({name: userInput, completed: false}); userInput = ''">Add</button>
+                <button @click="if(userInput.trim().length) 
+                todos.push({name: userInput, completed: false}); userInput = ''">Add</button>
             </form>
             <template x-for="todo in todos">
                 <div>
-                    <input type="checkbox">
-                    <span x-text="todo.name"></span>
+                    <input type="checkbox" x-model="todo.completed">
+                    <span x-text="todo.name" x-bind:class="{'completed': todo.completed}"></span>
                     <button @click="todos = todos.filter((currentToDo)=> currentToDo != todo)" class="delete">x</button>
                 </div>
             </template>
+            <button @click="todos = []" x-show="todos.length">Clear All</button>
         </div>
     </div>
 </body>
