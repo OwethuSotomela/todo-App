@@ -1,4 +1,4 @@
-## Todo App
+## Todo App (Alpine-Framework)
 
 For our todo app, a user:
 * should be able to add a to do
