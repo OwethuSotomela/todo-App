@@ -25,11 +25,15 @@
             <template x-for="todo in todos">
                 <div>
                     <input type="checkbox" x-model="todo.completed">
-                    <span x-text="todo.name" x-bind:class="{'completed': todo.completed}"></span>
+                    <span x-text="todo.name" :class="{'completed': todo.completed}"></span>
                     <button @click="todos = todos.filter((currentToDo)=> currentToDo != todo)" class="delete">x</button>
                 </div>
             </template>
             <button @click="todos = []" x-show="todos.length">Clear All</button>
+            <div>
+                <span x-text="todos.filter((todo) => todo.completed).length"></span> /
+                <span x-text="todos.length"></span> todos completed
+            </div>
         </div>
     </div>
 </body>
