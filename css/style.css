@@ -1,7 +1,42 @@
-.delete:hover{
+* {
+    margin: auto;
+}
+
+h1 {
+    padding-top: 5vh;
+}
+
+.delete:hover {
     cursor: pointer;
 }
 
-.completed{
+.completed {
     text-decoration: line-through;
+}
+
+body {
+    background-image: url('../images/i2.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+.col-12 {
+    text-align: center;
+}
+
+.container {
+    background-color: white;
+    width: 100%;
+    margin-top: 10vh;
+}
+
+button {
+    background-color: palevioletred;
+    color: white;
+    padding: 1px 1px;
+    text-align: center;
+    align-items: center;
+    text-decoration: none;
+    display: inline-block;
 }
