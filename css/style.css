@@ -68,6 +68,8 @@ button {
 input{
     height: 2rem;
     width: 15rem;
+    border-radius: 5px;
+
 }
 .addBtn{
     background-color: green;
