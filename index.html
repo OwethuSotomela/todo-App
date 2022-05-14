@@ -32,8 +32,8 @@
                     </form>
                     <template x-for="todo in todos">
                         <div>
-                            <input type="checkbox" x-model="todo.completed">
-                            <span x-text="todo.name" :class="{'completed': todo.completed}"></span>
+                            <input type="checkbox" x-model="todo.completed" class="checkbox">
+                            <span x-text="todo.name" :class="{'completed': todo.completed}" class="myToDo"></span>
                             <button @click="todos = todos.filter((currentToDo)=> currentToDo != todo)"
                                 class="deleteBtn">x</button>
                         </div>
