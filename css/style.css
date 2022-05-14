@@ -4,6 +4,19 @@
 
 h1 {
     padding-top: 5vh;
+    text-shadow:  2px 2px 5px black;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-style: oblique;
+}
+.toIcon{
+    margin-top: 23px;
+    width: 3rem;
+    height: 3rem;
+}
+#header{
+    display: flex;
+    flex-direction: row;
 }
 
 .deleteBtn{
@@ -22,6 +35,9 @@ h1 {
 
 .completed {
     text-decoration: line-through;
+}
+::placeholder{
+    text-align: center;
 }
 
 body {
