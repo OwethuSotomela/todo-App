@@ -6,8 +6,18 @@ h1 {
     padding-top: 5vh;
 }
 
-.delete:hover {
-    cursor: pointer;
+.deleteBtn{
+    background-color: red;
+    width: 2rem;
+    border: 1px solid white;
+    border-radius: 6px;
+}
+
+.clearAll{
+    width: 5rem;
+    background-color: brown;
+    border: 1px solid white;
+    border-radius: 5px;
 }
 
 .completed {
@@ -15,7 +25,7 @@ h1 {
 }
 
 body {
-    background-image: url('../images/i2.jpeg');
+    background-image: url('../images/16.jpeg');
     background-size: cover;
     background-repeat: no-repeat;
     height: 100vh;
@@ -29,6 +39,8 @@ body {
     background-color: white;
     width: 100%;
     margin-top: 10vh;
+    padding-bottom: 5vh;
+    box-shadow: 0 20px 25px 0 rgba(0,0,0,1), 0 6px 20px 0 rgba(0,0,0,1);
 }
 
 button {
@@ -39,4 +51,14 @@ button {
     align-items: center;
     text-decoration: none;
     display: inline-block;
+}
+
+.addBtn{
+    background-color: green;
+    width: 4rem;
+    border-radius: 5px;
+}
+
+.todosCompleted{
+    padding-top: 1rem;
 }
