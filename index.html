@@ -28,7 +28,7 @@
                     <form x-on:submit.prevent>
                         <input x-model="userInput" placeholder="Enter todo item" type="text">
                         <button @click="if(userInput.trim().length) 
-                todos.push({name: userInput, completed: false}); userInput = ''">Add</button>
+                todos.push({name: userInput[0].toUpperCase() + userInput.slice(1).toLowerCase(), completed: false}); userInput = ''">Add</button>
                     </form>
                     <template x-for="todo in todos">
                         <div>
