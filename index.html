@@ -23,12 +23,11 @@
                 <h1>ToDo App</h1>
             </div>
             <div class="col-12">
-                <div x-data="{ todos: [], userInput: ''}">
+                <div x-data="myToDos">
                     <form x-on:submit.prevent>
                         <input x-model="userInput" placeholder="Enter todo item" type="text">
                         <button
-                            @click="if(userInput.trim().length) 
-                todos.push({name: userInput[0].toUpperCase() + userInput.slice(1).toLowerCase(), completed: false}); userInput = ''"
+                            @click="addToDo()"
                             class="addBtn">Add</button>
                     </form>
                     <template x-for="todo in todos">
