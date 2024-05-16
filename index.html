@@ -25,8 +25,8 @@
             </form>
             <template x-for="todo in todos">
                 <div class="flex items-center justify-between mb-2">
-                    <div class="flex items-center">
-                        <input type="checkbox" x-model="todo.completed" class="form-check-input mr-2">
+                    <div class="flex items-center space-x-2">
+                        <input type="checkbox" x-model="todo.completed" class="form-check-input">
                         <span x-text="todo.name" :class="{'line-through': todo.completed}" class="text-lg"></span>
                     </div>
                     <button @click="checkMyBox(todo)" class="btn btn-danger btn-sm">x</button>

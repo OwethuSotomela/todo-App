@@ -1,4 +1,4 @@
-* {
+/* * {
     margin: auto;
 }
 
@@ -80,4 +80,24 @@ input{
 
 .todosCompleted{
     padding-top: 1rem;
+} */
+
+.todo-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.todo-item .item-details {
+    display: flex;
+    align-items: center;
+}
+
+.todo-item .item-details span {
+    margin-left: 0.5rem;
+}
+
+.todo-item button {
+    margin-left: auto;
 }

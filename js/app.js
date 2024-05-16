@@ -5,9 +5,9 @@ document.addEventListener('alpine:init', () => {
             todos: [],
             addToDo() {
                 if (this.userInput.trim().length) {
-                    this.todos.push({ 
-                        name: this.userInput.charAt(0).toUpperCase() + this.userInput.slice(1), 
-                        completed: false 
+                    this.todos.push({
+                        name: this.userInput.charAt(0).toUpperCase() + this.userInput.slice(1),
+                        completed: false
                     });
                     this.userInput = '';
                 }
