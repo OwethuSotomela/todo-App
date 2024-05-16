@@ -33,4 +33,4 @@ Technologies Used
   * Bootstrap 5
   * Tailwind CSS
 * JavaScript
-* * Alpine.js
+ * Alpine.js
