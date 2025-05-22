@@ -5,31 +5,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>ToDo App</title>
   <link rel="stylesheet" href="./css/style.css" />
-  <link rel="icon" href="favicon.ico" type="image/x-icon" />
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
 </head>
 <body>
-  <div class="container">
+  <div class="app">
     <h1>ToDo App</h1>
-    <input type="text" id="todoInput" placeholder="Enter todo item" />
-    <button id="addBtn" class="btn green">Add</button>
-
-    <div class="filters">
-      <button class="btn filter-btn" data-filter="all">All</button>
-      <button class="btn filter-btn" data-filter="active">Active</button>
-      <button class="btn filter-btn" data-filter="completed">Completed</button>
+    <div class="input-section">
+      <input type="text" id="todo-input" placeholder="Enter todo item" />
+      <button id="add-btn">Add</button>
     </div>
-
-    <ul id="todoList"></ul>
-
-    <div class="controls">
-      <a href="#" id="exportLink">Export</a> |
-      <a href="#" id="toggleTheme">Toggle Theme</a>
+    <div class="filter-buttons">
+      <button class="filter active" data-filter="all">All</button>
+      <button class="filter" data-filter="active">Active</button>
+      <button class="filter" data-filter="completed">Completed</button>
     </div>
-
-    <p id="statusText"><span id="completedCount">0</span> / <span id="totalCount">0</span> tasks completed</p>
+    <ul id="todo-list"></ul>
+    <div class="footer">
+      <a href="#" id="export">Export</a> |
+      <a href="#" id="toggle-theme">Toggle Theme</a>
+      <p id="task-count"></p>
+    </div>
   </div>
-
   <script src="./js/app.js"></script>
 </body>
 </html>
