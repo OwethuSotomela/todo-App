@@ -1,92 +1,12 @@
-/* * {
-    margin: auto;
-}
-
-h1 {
-    padding-top: 5vh;
-    text-shadow:  2px 2px 5px black;
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: bold;
-    font-style: oblique;
-}
-
-.deleteBtn{
-    background-color: red;
-    width: 2rem;
-    border: 1px solid white;
-    border-radius: 6px;
-}
-
-.clearAll{
-    width: 5rem;
-    background-color: brown;
-    border: 1px solid white;
-    border-radius: 5px;
-    margin-top: 1rem;
-}
-
-.completed {
-    text-decoration: line-through;
-}
-::placeholder{
-    text-align: center;
-}
-input.checkbox{
-    width: 20px;
-    height: 15px;
-    margin-top: 1rem;
-}
-
 body {
-    background-image: url('../images/16.jpeg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
-
-.col-12 {
-    text-align: center;
-}
-
-.container {
-    background-color: white;
-    width: 60%;
-    margin-top: 10vh;
-    padding-bottom: 5vh;
-    box-shadow: 0 20px 25px 0 rgba(0,0,0,1), 0 6px 20px 0 rgba(0,0,0,1);
-}
-
-button {
-    background-color: palevioletred;
-    color: white;
-    padding: 2px 2px;
-    text-align: center;
-    align-items: center;
-    text-decoration: none;
-    display: inline-block;
-}
-input{
-    height: 2rem;
-    width: 15rem;
-    border-radius: 5px;
-
-}
-.addBtn{
-    background-color: green;
-    width: 4rem;
-    border-radius: 5px;
-    height: 2rem;
-}
-
-.todosCompleted{
-    padding-top: 1rem;
-} */
 
 .todo-item {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 0.5rem;
 }
 
 .todo-item .item-details {
@@ -96,8 +16,19 @@ input{
 
 .todo-item .item-details span {
     margin-left: 0.5rem;
+    min-width: 5rem;
+    padding: 2px 4px;
+    border-radius: 4px;
 }
 
 .todo-item button {
-    margin-left: auto;
+    margin-left: 1rem;
+    font-weight: bold;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+input::placeholder {
+    text-align: center;
 }
