@@ -1,36 +1,58 @@
-## Todo App (Alpine-Framework)
+# 📝 ToDo App by Owethu Sotomela
 
-[View-TodoApp](https://owethusotomela.github.io/todo-App/)
+A responsive, and feature-rich ToDo application built with vanilla HTML, CSS, and JavaScript. This app helps users efficiently manage tasks with support for dark mode, task filtering, and exporting tasks.
 
+## 🔗 Live Demo
+Check it out live: [owethusotomela.github.io/todo-App](https://owethusotomela.github.io/todo-App)
 
-Table of Contents
+---
 
-* Introduction
-* Features
-* Technologies Used
-* Getting Started
-* Usage
-* Contributing
-* License
+## ✨ Features
 
-Introduction
+- ✅ Add and remove tasks
+- 🔁 Mark tasks as **completed** or **active**
+- 🌗 Toggle between **light** and **dark** themes
+- 🔎 Filter tasks by **All**, **Active**, or **Completed**
+- 📦 Export your current tasks to a downloadable text file
 
-The ToDo App is a simple and intuitive task management application that allows users to keep track of their tasks efficiently. Users can add, view, delete, and mark tasks as complete. The app also provides an overview of the total number of tasks and the number of completed tasks.
+---
 
-Features
+## 💻 Tech Stack
 
-* Add a ToDo: Users can add new tasks to their list.
-* View ToDos: Users can see a list of all their tasks.
-* Delete a ToDo: Users can remove tasks from their list.
-* Complete a ToDo: Users can mark tasks as completed.
-* Clear All ToDos: Users can clear the entire list of tasks.
-* Task Overview: Users can see the number of tasks and the number of completed tasks.
+- **HTML5**
+- **CSS3** (Custom styles, Flexbox layout)
+- **JavaScript (ES6+)**
 
-Technologies Used
+---
 
-* HTML5
-* CSS3
-  * Bootstrap 5
-  * Tailwind CSS
-* JavaScript
- * Alpine.js
+## 🗂️ Project Structure
+
+todo-App/
+│
+├── index.html            # Main HTML file
+├── css/
+│   └── style.css         # All styles
+└── js/
+└── app.js            # Core application logic
+
+---
+
+## 🚀 Getting Started
+
+To run locally:
+
+1. Clone this repo:
+   ```bash
+   git clone https://github.com/OwethuSotomela/todo-App.git
+  
+📄 License
+
+This project is open source and available under the MIT License.
+
+⸻
+
+👩🏽‍💻 Author
+
+Owethu Sotomela
+Full Stack Developer | Founder of SotoPrime TechSolutions
+
