@@ -7,7 +7,6 @@
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css" />
-    <script src="./js/app.js" defer></script>
 </head>
 <body class="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 min-h-screen flex items-center justify-center">
     <div class="container bg-white dark:bg-gray-800 shadow-lg rounded-lg p-6 w-full max-w-2xl" x-data="myToDos" x-init="init()">
@@ -56,5 +55,7 @@
             <span x-text="todos.length"></span> tasks completed
         </div>
     </div>
+    
+    <script src="./js/app.js" defer></script>
 </body>
 </html>
