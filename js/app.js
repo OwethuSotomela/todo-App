@@ -1,60 +1,61 @@
-document.addEventListener('alpine:init', () => {
-    Alpine.data('myToDos', () => {
-        return {
-            userInput: '',
-            todos: JSON.parse(localStorage.getItem('todos')) || [],
-            filter: 'all',
-            theme: 'light',
-            
-            init() {
-                this.$watch('todos', (value) => {
-                    localStorage.setItem('todos', JSON.stringify(value));
-                });
-            },
+function todoApp() {
+  return {
+    newTask: '',
+    tasks: [],
+    filter: 'all',
+    theme: 'light',
 
-            addToDo() {
-                if (this.userInput.trim().length) {
-                    this.todos.push({
-                        id: Date.now(),
-                        name: this.userInput.charAt(0).toUpperCase() + this.userInput.slice(1),
-                        completed: false,
-                        createdAt: new Date().toLocaleString()
-                    });
-                    this.userInput = '';
-                }
-            },
+    init() {
+      const saved = localStorage.getItem('tasks');
+      if (saved) {
+        this.tasks = JSON.parse(saved);
+      }
+    },
 
-            checkMyBox(todo) {
-                this.todos = this.todos.filter(t => t !== todo);
-            },
+    addTask() {
+      if (this.newTask.trim() !== '') {
+        this.tasks.push({ text: this.newTask, completed: false });
+        this.newTask = '';
+        this.saveTasks();
+      }
+    },
 
-            filteredTodos() {
-                if (this.filter === 'active') {
-                    return this.todos.filter(todo => !todo.completed);
-                } else if (this.filter === 'completed') {
-                    return this.todos.filter(todo => todo.completed);
-                }
-                return this.todos;
-            },
+    deleteTask(index) {
+      this.tasks.splice(index, 1);
+      this.saveTasks();
+    },
 
-            editToDo(todo, event) {
-                todo.name = event.target.innerText;
-            },
+    saveTasks() {
+      localStorage.setItem('tasks', JSON.stringify(this.tasks));
+    },
 
-            exportToDos() {
-                const blob = new Blob([JSON.stringify(this.todos, null, 2)], { type: "application/json" });
-                const url = URL.createObjectURL(blob);
-                const a = document.createElement('a');
-                a.href = url;
-                a.download = "todos.json";
-                a.click();
-                URL.revokeObjectURL(url);
-            },
+    filteredTasks() {
+      if (this.filter === 'active') {
+        return this.tasks.filter(t => !t.completed);
+      } else if (this.filter === 'completed') {
+        return this.tasks.filter(t => t.completed);
+      }
+      return this.tasks;
+    },
 
-            toggleTheme() {
-                this.theme = this.theme === 'light' ? 'dark' : 'light';
-                document.documentElement.classList.toggle('dark', this.theme === 'dark');
-            }
-        };
-    });
-});
+    completedCount() {
+      return this.tasks.filter(t => t.completed).length;
+    },
+
+    exportTasks() {
+      const data = JSON.stringify(this.tasks, null, 2);
+      const blob = new Blob([data], { type: "application/json" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = "tasks.json";
+      a.click();
+      URL.revokeObjectURL(url);
+    },
+
+    toggleTheme() {
+      this.theme = this.theme === 'light' ? 'dark' : 'light';
+      document.documentElement.classList.toggle('dark', this.theme === 'dark');
+    }
+  }
+}
