@@ -1,61 +1,46 @@
 <!DOCTYPE html>
-<html lang="en" x-data x-init="$watch('theme', val => document.documentElement.classList.toggle('dark', val === 'dark'))">
+<html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Enhanced ToDo App</title>
-    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="./css/style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ToDo App</title>
+  <link rel="stylesheet" href="./css/style.css" />
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
-<body class="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 min-h-screen flex items-center justify-center">
-    <div class="container bg-white dark:bg-gray-800 shadow-lg rounded-lg p-6 w-full max-w-2xl" x-data="myToDos" x-init="init()">
-        <div class="text-center mb-4">
-            <h1 class="text-4xl font-bold">ToDo App</h1>
-        </div>
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white" x-data="todoApp()" x-init="init()">
 
-        <form x-on:submit.prevent class="flex gap-2 mb-4">
-            <input x-model="userInput" placeholder="Enter todo item" type="text" class="form-input w-full rounded border-gray-300" />
-            <button @click="addToDo()" class="btn btn-success px-4 py-2 bg-green-500 text-white rounded">Add</button>
-        </form>
+  <div class="app">
+    <h1>ToDo App</h1>
 
-        <div class="flex justify-between mb-4">
-            <div>
-                <button @click="filter = 'all'" :class="{'font-bold': filter === 'all'}">All</button>
-                <button @click="filter = 'active'" :class="{'font-bold': filter === 'active'}">Active</button>
-                <button @click="filter = 'completed'" :class="{'font-bold': filter === 'completed'}">Completed</button>
-            </div>
-            <div>
-                <button @click="exportToDos()" class="text-blue-500 underline">Export</button>
-                <button @click="toggleTheme()" class="ml-4 text-purple-500 underline">Toggle Theme</button>
-            </div>
-        </div>
+    <input type="text" x-model="newTask" placeholder="Enter todo item" />
+    <button @click="addTask()">Add</button>
 
-        <template x-for="todo in filteredTodos()" :key="todo.id">
-            <div class="todo-item bg-gray-100 dark:bg-gray-700 p-3 rounded mb-2">
-                <div class="item-details">
-                    <input type="checkbox" x-model="todo.completed" class="form-checkbox mr-2" />
-                    <span
-                        contenteditable
-                        @blur="editToDo(todo, $event)"
-                        :class="{'line-through': todo.completed, 'text-gray-400': todo.completed}"
-                        class="outline-none"
-                        x-text="todo.name"
-                    ></span>
-                </div>
-                <div class="text-sm text-gray-500 dark:text-gray-300 ml-4" x-text="'Created: ' + todo.createdAt"></div>
-                <button @click="checkMyBox(todo)" class="text-red-500 ml-auto">x</button>
-            </div>
-        </template>
-
-        <button @click="todos = []" x-show="todos.length" class="btn btn-warning mt-4 bg-yellow-500 text-white px-4 py-2 rounded">Clear All</button>
-
-        <div class="mt-4 text-center text-sm">
-            <span x-text="todos.filter(t => t.completed).length"></span> /
-            <span x-text="todos.length"></span> tasks completed
-        </div>
+    <div>
+      <button @click="filter = 'all'">All</button>
+      <button @click="filter = 'active'">Active</button>
+      <button @click="filter = 'completed'">Completed</button>
     </div>
-    
-    <script src="./js/app.js" defer></script>
+
+    <ul>
+      <template x-for="(task, index) in filteredTasks()" :key="index">
+        <li>
+          <input type="checkbox" x-model="task.completed" />
+          <span x-text="task.text" :class="{ 'line-through': task.completed }"></span>
+          <button @click="deleteTask(index)">🗑️</button>
+        </li>
+      </template>
+    </ul>
+
+    <div>
+      <span x-text="`${completedCount()} / ${tasks.length} tasks completed`"></span>
+    </div>
+
+    <div>
+      <a href="#" @click.prevent="exportTasks()">Export</a> |
+      <a href="#" @click.prevent="toggleTheme()">Toggle Theme</a>
+    </div>
+  </div>
+
+  <script src="./js/app.js"></script>
 </body>
 </html>
