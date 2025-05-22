@@ -1,48 +1,101 @@
 body {
-  font-family: Arial, sans-serif;
-  padding: 2rem;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  transition: background 0.3s, color 0.3s;
 }
 
-.app {
-  background: white;
-  padding: 2rem;
-  border-radius: 1rem;
+body.dark {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+.container {
   max-width: 500px;
-  margin: auto;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  margin: 40px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
 }
 
-button {
-  margin: 0.2rem;
-  padding: 0.5rem;
-  background: #10b981;
-  color: white;
-  border: none;
-  border-radius: 0.3rem;
-  cursor: pointer;
+body.dark .container {
+  background: #1e1e1e;
 }
 
-button:hover {
-  background: #059669;
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 input[type="text"] {
-  padding: 0.5rem;
   width: 70%;
-  margin-right: 1rem;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
 }
 
-.line-through {
+.btn {
+  padding: 10px 16px;
+  margin-left: 5px;
+  font-size: 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn.green {
+  background-color: #28a745;
+  color: white;
+}
+
+.btn.red {
+  background-color: #dc3545;
+  color: white;
+}
+
+.filter-btn {
+  margin-top: 10px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  padding: 10px;
+  margin: 5px 0;
+  background: #f1f1f1;
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+body.dark li {
+  background: #333;
+}
+
+.completed {
   text-decoration: line-through;
+  opacity: 0.6;
 }
 
-.dark .app {
-  background: #1f2937;
-  color: white;
+li i {
+  margin-left: 10px;
+  cursor: pointer;
 }
 
-.dark input,
-.dark button {
-  background: #374151;
-  color: white;
+.controls {
+  margin-top: 20px;
+  text-align: center;
+}
+
+#statusText {
+  text-align: center;
+  margin-top: 15px;
 }
